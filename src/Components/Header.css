@@ -1,0 +1,13 @@
+.border {
+    border: 2px solid white;
+}
+
+.mrBottom {
+    margin-bottom: 0.6em;
+}
+
+.top-cont {
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+}

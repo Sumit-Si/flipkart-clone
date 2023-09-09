@@ -6,15 +6,17 @@ import Sidebar from "./Components/Sidebar";
 import Main from "./Components/Main";
 import ButtonUsage from "./Components/Button";
 import { Container, Typography, Box, Paper, Button, Grid, Stack } from "@mui/material";
+import Data from "./data/productData";
 
 function App() {
   const [mode, setMode] = useState("dark");
-
+ 
   const serviceList = ["Service1", "Service2", "Service3"];
 
   function handleClick() {
     setMode(mode === "dark" ? "light" : "dark");
   }
+  
 
   return (
     <ThemeContext.Provider value={mode}>
@@ -68,8 +70,13 @@ function App() {
           <Stack>
             <Header />
           </Stack>
-          <Grid>
-
+          <Grid container gap={1} mt={1}>
+            <Grid item xs={2.2} sx={{bgcolor: 'yellow'}}>
+              <Sidebar />
+            </Grid>
+            <Grid item xs={9.6} sx={{bgcolor: 'yellow'}}>
+              <Main />
+            </Grid>
           </Grid>
         </Grid>
       </div> 

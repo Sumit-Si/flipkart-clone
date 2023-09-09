@@ -4,14 +4,14 @@ import './index.css';
 import App from './App';
 import { ThemeProvider } from '@emotion/react';
 import { createTheme } from '@mui/material';
-
+ 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#2874F0'
+      main: '#2874F0',
     },
     secondary: {
-      main: '#ffffff',
+      main: '#edf2f4',
       contrastText: 'green'
     },
   },

@@ -1,7 +1,23 @@
-import { Breadcrumbs, Link, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Breadcrumbs,
+  Grid,
+  Link,
+  Stack,
+  Tab,
+  Tabs,
+  Typography,
+} from "@mui/material";
 import "./Main.css";
+import { useState } from "react";
 
 function Main() {
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <>
       <Stack sx={{ py: 2 }}>
@@ -50,11 +66,22 @@ function Main() {
             (Showing 1 – 40 products of 46,886 products)
           </Typography>
         </Stack>
-        <Stack>
-          <Typography>
-            Sort By Popularity Price -- Low to High Price -- High to Low Newest
-            First
+        <Stack ml={2}>
+          <Typography variant="h6" sx={{ fontSize: "0.84rem"}} display={'flex'} justifyContent={'start'} alignItems={'center'}>
+            Sort By
+            <Box>
+              <Tabs value={value} onChange={handleChange} sx={{display:'flex',justifyContent:'start',alignItems:'center'}}>
+                <Tab label="Popularity" sx={{fontSize:'0.84rem',textTransform:'capitalize',p:'0.6em'}} />
+                <Tab label="Price" sx={{fontSize:'0.84rem',textTransform:'capitalize',p:'0.6em'}} />
+                <Tab label="Low to High Price" sx={{fontSize:'0.84rem',textTransform:'capitalize',p:'0.6em'}} />
+                <Tab label="High to Low" sx={{fontSize:'0.84rem',textTransform:'capitalize',p:'0.6em'}} />
+                <Tab label="Newest First" sx={{fontSize:'0.84rem',textTransform:'capitalize',p:'0.6em'}} />
+              </Tabs>
+            </Box>
           </Typography>
+        </Stack>
+        <Stack py={1}>
+          
         </Stack>
       </Stack>
     </>
